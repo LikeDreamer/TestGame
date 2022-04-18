@@ -1,0 +1,251 @@
+
+nvboss_011.png
+size: 155,155
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bozi
+  rotate: true
+  xy: 2, 149
+  size: 4, 6
+  orig: 6, 8
+  offset: 1, 1
+  index: -1
+dg
+  rotate: false
+  xy: 68, 97
+  size: 85, 15
+  orig: 85, 15
+  offset: 0, 0
+  index: -1
+kua1
+  rotate: false
+  xy: 16, 121
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+maozi
+  rotate: false
+  xy: 2, 62
+  size: 32, 20
+  orig: 34, 22
+  offset: 1, 1
+  index: -1
+shenti
+  rotate: true
+  xy: 65, 61
+  size: 21, 26
+  orig: 21, 26
+  offset: 0, 0
+  index: -1
+shenti-bei
+  rotate: true
+  xy: 93, 61
+  size: 21, 26
+  orig: 21, 26
+  offset: 0, 0
+  index: -1
+shenti-ce
+  rotate: true
+  xy: 41, 100
+  size: 19, 25
+  orig: 19, 25
+  offset: 0, 0
+  index: -1
+shenti2
+  rotate: true
+  xy: 36, 62
+  size: 20, 27
+  orig: 20, 27
+  offset: 0, 0
+  index: -1
+tou1
+  rotate: true
+  xy: 91, 116
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+toubei
+  rotate: true
+  xy: 34, 121
+  size: 13, 15
+  orig: 15, 17
+  offset: 1, 1
+  index: -1
+touce
+  rotate: true
+  xy: 51, 121
+  size: 13, 15
+  orig: 15, 17
+  offset: 1, 1
+  index: -1
+toudai1
+  rotate: false
+  xy: 110, 114
+  size: 35, 15
+  orig: 35, 15
+  offset: 0, 0
+  index: -1
+toudai2
+  rotate: false
+  xy: 2, 101
+  size: 37, 18
+  orig: 37, 18
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: true
+  xy: 2, 84
+  size: 11, 140
+  orig: 11, 140
+  offset: 0, 0
+  index: -1
+youdabi
+  rotate: true
+  xy: 85, 145
+  size: 8, 13
+  orig: 10, 15
+  offset: 1, 1
+  index: -1
+youdatui
+  rotate: true
+  xy: 76, 133
+  size: 10, 21
+  orig: 10, 21
+  offset: 0, 0
+  index: -1
+youdatui-bei
+  rotate: true
+  xy: 100, 145
+  size: 8, 19
+  orig: 10, 21
+  offset: 1, 1
+  index: -1
+youjianjia
+  rotate: true
+  xy: 136, 144
+  size: 9, 11
+  orig: 11, 13
+  offset: 1, 1
+  index: -1
+youjiao
+  rotate: false
+  xy: 2, 137
+  size: 12, 9
+  orig: 14, 11
+  offset: 1, 1
+  index: -1
+youjiao-bei
+  rotate: false
+  xy: 16, 137
+  size: 12, 9
+  orig: 14, 11
+  offset: 1, 1
+  index: -1
+youjiao-ce
+  rotate: false
+  xy: 30, 136
+  size: 10, 9
+  orig: 12, 11
+  offset: 1, 1
+  index: -1
+youshou
+  rotate: true
+  xy: 30, 147
+  size: 6, 7
+  orig: 8, 9
+  offset: 1, 1
+  index: -1
+youxiaobi
+  rotate: true
+  xy: 39, 147
+  size: 6, 12
+  orig: 8, 14
+  offset: 1, 1
+  index: -1
+youxiaotui
+  rotate: true
+  xy: 10, 148
+  size: 5, 18
+  orig: 7, 20
+  offset: 1, 1
+  index: -1
+zuodabi
+  rotate: true
+  xy: 121, 145
+  size: 8, 13
+  orig: 10, 15
+  offset: 1, 1
+  index: -1
+zuodatui
+  rotate: true
+  xy: 112, 132
+  size: 11, 19
+  orig: 13, 21
+  offset: 1, 1
+  index: -1
+zuodatui-bei
+  rotate: true
+  xy: 133, 131
+  size: 11, 19
+  orig: 13, 21
+  offset: 1, 1
+  index: -1
+zuodatui3
+  rotate: false
+  xy: 68, 117
+  size: 21, 14
+  orig: 21, 14
+  offset: 0, 0
+  index: -1
+zuojianjia
+  rotate: true
+  xy: 42, 136
+  size: 9, 11
+  orig: 11, 13
+  offset: 1, 1
+  index: -1
+zuojiao
+  rotate: true
+  xy: 99, 133
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+zuojiao-bei
+  rotate: false
+  xy: 76, 146
+  size: 7, 7
+  orig: 9, 9
+  offset: 1, 1
+  index: -1
+zuoshou
+  rotate: true
+  xy: 53, 147
+  size: 6, 7
+  orig: 8, 9
+  offset: 1, 1
+  index: -1
+zuoxiaobi
+  rotate: true
+  xy: 62, 147
+  size: 6, 12
+  orig: 8, 14
+  offset: 1, 1
+  index: -1
+zuoxiaobi-neice
+  rotate: false
+  xy: 2, 123
+  size: 12, 12
+  orig: 14, 14
+  offset: 1, 1
+  index: -1
+zuoxiaotui
+  rotate: true
+  xy: 55, 136
+  size: 9, 19
+  orig: 11, 21
+  offset: 1, 1
+  index: -1

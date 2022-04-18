@@ -1,0 +1,90 @@
+
+fly.png
+size: 507,34
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gongji01
+  rotate: false
+  xy: 2, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+idie01
+  rotate: false
+  xy: 2, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+gongji02
+  rotate: false
+  xy: 242, 2
+  size: 55, 30
+  orig: 55, 30
+  offset: 0, 0
+  index: -1
+gongji03
+  rotate: false
+  xy: 62, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+idie03
+  rotate: false
+  xy: 62, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+gongji04
+  rotate: false
+  xy: 122, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+idie04
+  rotate: false
+  xy: 122, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+idie02
+  rotate: false
+  xy: 182, 2
+  size: 58, 30
+  orig: 58, 30
+  offset: 0, 0
+  index: -1
+move01
+  rotate: false
+  xy: 299, 2
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1
+move02
+  rotate: false
+  xy: 351, 2
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1
+move03
+  rotate: false
+  xy: 403, 2
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1
+move04
+  rotate: false
+  xy: 455, 2
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1

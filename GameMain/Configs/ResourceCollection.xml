@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UnityGameFramework>
+  <ResourceCollection>
+    <Resources>
+      <Resource Name="Actors" LoadType="0" Packed="False" />
+      <Resource Name="Config" LoadType="0" Packed="False" />
+      <Resource Name="Curves" LoadType="0" Packed="False" />
+      <Resource Name="DataTables/AssetsPath" LoadType="0" Packed="False" />
+      <Resource Name="DataTables/Entity" LoadType="0" Packed="False" />
+      <Resource Name="DataTables/EntityGroup" LoadType="0" Packed="False" />
+      <Resource Name="MainScene" LoadType="0" Packed="False" />
+      <Resource Name="MenuScene" LoadType="0" Packed="False" />
+      <Resource Name="Monsters" LoadType="0" Packed="False" />
+      <Resource Name="Scenes/TimeLineTest" LoadType="0" Packed="False" />
+      <Resource Name="SkillData" LoadType="0" Packed="False" />
+      <Resource Name="SkillEffects" LoadType="0" Packed="False" />
+      <Resource Name="Tables" LoadType="0" Packed="False" />
+      <Resource Name="UI" LoadType="0" Packed="False" />
+    </Resources>
+    <Assets>
+      <Asset Guid="0360eb86b37f171499f4ee2fd043672e" ResourceName="Tables" />
+      <Asset Guid="097946b17d67ab049be686836ac7e140" ResourceName="SkillData" />
+      <Asset Guid="0ce108a13fd6a9845a74b8fab763d7e2" ResourceName="Tables" />
+      <Asset Guid="11ecc4bb43b31474cb01a2c7dbf9240a" ResourceName="SkillEffects" />
+      <Asset Guid="1f52abde67521864fb1beaa5bf4c3414" ResourceName="Tables" />
+      <Asset Guid="239366f83979ffa48a45dac2f0f1e8cb" ResourceName="Tables" />
+      <Asset Guid="2498872b2bd83364b9162c9a1e1a6711" ResourceName="Actors" />
+      <Asset Guid="4822580a068d92046a305a9337106856" ResourceName="Monsters" />
+      <Asset Guid="4a17d2c656f5c6b44a31e3ee547a76b0" ResourceName="Tables" />
+      <Asset Guid="4db6a299939bfe94893585eb387f577a" ResourceName="Tables" />
+      <Asset Guid="5cef39ff986afe34c84648719b30e7dd" ResourceName="Config" />
+      <Asset Guid="65c7ebaa528ec4342817a99d70e005a4" ResourceName="MainScene" />
+      <Asset Guid="67c9ee023e6a9bc44bca7c55369645b1" ResourceName="Curves" />
+      <Asset Guid="6f3f573246201ec4691ea519af51342e" ResourceName="MenuScene" />
+      <Asset Guid="73a2cd7932ea7074aba3fdfe9137fcc7" ResourceName="SkillEffects" />
+      <Asset Guid="775bbdc755ba1a3458c62fd8a49b35e4" ResourceName="Scenes/TimeLineTest" />
+      <Asset Guid="8577438a22294264d91e1d5deab2a3b1" ResourceName="Config" />
+      <Asset Guid="87e9abfe4d3226549a274a5818c82757" ResourceName="SkillEffects" />
+      <Asset Guid="8b1acacd22538f34cb85287a0781ea5e" ResourceName="Tables" />
+      <Asset Guid="8e114ded6a865324588170636872943c" ResourceName="Tables" />
+      <Asset Guid="968bd24d082bf1f4fade566393286ec4" ResourceName="UI" />
+      <Asset Guid="97d117308cf86924289e81e7e71dd5dd" ResourceName="Tables" />
+      <Asset Guid="9b433f0bb7fef6f4085c316a0d88c307" ResourceName="Tables" />
+      <Asset Guid="9c3faac13c8ced84a9f3018303b7bb98" ResourceName="Tables" />
+      <Asset Guid="9f49813729957ea429280d8fc391d74b" ResourceName="Scenes/TimeLineTest" />
+      <Asset Guid="a33e23ae848110243820cda82120b105" ResourceName="Tables" />
+      <Asset Guid="a3df6df710075fa4f88c80d30f3bdc6b" ResourceName="SkillData" />
+      <Asset Guid="a9e0be97f4b09d84581d27c49d5ff7a3" ResourceName="Tables" />
+      <Asset Guid="e0792649e7774a24d8e7cceba0231c61" ResourceName="Tables" />
+      <Asset Guid="fdb5edd099d06b045af609ba3172400a" ResourceName="Tables" />
+    </Assets>
+  </ResourceCollection>
+</UnityGameFramework>

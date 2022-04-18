@@ -1,0 +1,608 @@
+
+Player.png
+size: 520,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm01
+  rotate: false
+  xy: 498, 217
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+L_arm02
+  rotate: false
+  xy: 506, 500
+  size: 12, 18
+  orig: 12, 18
+  offset: 0, 0
+  index: -1
+L_arm03
+  rotate: false
+  xy: 510, 250
+  size: 8, 13
+  orig: 8, 13
+  offset: 0, 0
+  index: -1
+L_leg1
+  rotate: true
+  xy: 499, 36
+  size: 14, 19
+  orig: 14, 19
+  offset: 0, 0
+  index: -1
+L_leg2
+  rotate: true
+  xy: 340, 65
+  size: 9, 17
+  orig: 10, 17
+  offset: 1, 0
+  index: -1
+L_leg3
+  rotate: false
+  xy: 498, 192
+  size: 9, 10
+  orig: 9, 10
+  offset: 0, 0
+  index: -1
+R_arm01
+  rotate: true
+  xy: 401, 78
+  size: 10, 15
+  orig: 10, 15
+  offset: 0, 0
+  index: -1
+R_arm02
+  rotate: false
+  xy: 506, 460
+  size: 10, 17
+  orig: 10, 17
+  offset: 0, 0
+  index: -1
+R_arm03
+  rotate: true
+  xy: 481, 2
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+R_leg1
+  rotate: false
+  xy: 451, 2
+  size: 9, 20
+  orig: 9, 20
+  offset: 0, 0
+  index: -1
+R_leg2
+  rotate: false
+  xy: 510, 265
+  size: 8, 15
+  orig: 9, 15
+  offset: 1, 0
+  index: -1
+R_leg3
+  rotate: true
+  xy: 498, 204
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+Sattack_002/1
+  rotate: false
+  xy: 152, 2
+  size: 49, 41
+  orig: 49, 41
+  offset: 0, 0
+  index: -1
+攻击/12
+  rotate: false
+  xy: 152, 2
+  size: 49, 41
+  orig: 49, 41
+  offset: 0, 0
+  index: -1
+Sattack_002/2
+  rotate: true
+  xy: 203, 2
+  size: 49, 41
+  orig: 49, 41
+  offset: 0, 0
+  index: -1
+Sattack_002/3
+  rotate: true
+  xy: 246, 2
+  size: 49, 39
+  orig: 49, 39
+  offset: 0, 0
+  index: -1
+Sattack_002/4
+  rotate: true
+  xy: 2, 2
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+攻击/15
+  rotate: true
+  xy: 2, 2
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+Sattack_002/5
+  rotate: true
+  xy: 31, 2
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+攻击/16
+  rotate: true
+  xy: 31, 2
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 435, 156
+  size: 14, 20
+  orig: 14, 20
+  offset: 0, 0
+  index: -1
+dao1
+  rotate: false
+  xy: 481, 52
+  size: 28, 23
+  orig: 30, 25
+  offset: 1, 1
+  index: -1
+head
+  rotate: false
+  xy: 481, 32
+  size: 16, 18
+  orig: 16, 18
+  offset: 0, 0
+  index: -1
+piaodai1
+  rotate: true
+  xy: 510, 282
+  size: 30, 8
+  orig: 30, 8
+  offset: 0, 0
+  index: -1
+piaodai2
+  rotate: false
+  xy: 481, 77
+  size: 37, 11
+  orig: 37, 11
+  offset: 0, 0
+  index: -1
+shentibei
+  rotate: false
+  xy: 435, 2
+  size: 14, 20
+  orig: 14, 20
+  offset: 0, 0
+  index: -1
+shentice
+  rotate: false
+  xy: 418, 2
+  size: 15, 20
+  orig: 15, 20
+  offset: 0, 0
+  index: -1
+toubei
+  rotate: false
+  xy: 481, 13
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+touce
+  rotate: false
+  xy: 499, 2
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+youshou2
+  rotate: true
+  xy: 414, 231
+  size: 11, 19
+  orig: 11, 19
+  offset: 0, 0
+  index: -1
+youshou3
+  rotate: true
+  xy: 498, 230
+  size: 16, 14
+  orig: 16, 14
+  offset: 0, 0
+  index: -1
+zuoshou2
+  rotate: false
+  xy: 506, 479
+  size: 11, 19
+  orig: 11, 19
+  offset: 0, 0
+  index: -1
+zuoshou3
+  rotate: false
+  xy: 462, 8
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+地面流派1/29
+  rotate: true
+  xy: 90, 375
+  size: 86, 59
+  orig: 88, 61
+  offset: 1, 1
+  index: -1
+地面流派1/30
+  rotate: false
+  xy: 414, 244
+  size: 69, 68
+  orig: 71, 70
+  offset: 1, 1
+  index: -1
+地面流派1/31
+  rotate: true
+  xy: 306, 306
+  size: 72, 64
+  orig: 74, 66
+  offset: 1, 1
+  index: -1
+地面流派1/32
+  rotate: true
+  xy: 304, 230
+  size: 74, 53
+  orig: 76, 55
+  offset: 1, 1
+  index: -1
+攻击/1
+  rotate: false
+  xy: 323, 388
+  size: 70, 73
+  orig: 70, 73
+  offset: 0, 0
+  index: -1
+攻击/10
+  rotate: false
+  xy: 2, 383
+  size: 86, 78
+  orig: 86, 78
+  offset: 0, 0
+  index: -1
+攻击/11
+  rotate: false
+  xy: 100, 2
+  size: 50, 41
+  orig: 50, 41
+  offset: 0, 0
+  index: -1
+攻击/13
+  rotate: false
+  xy: 100, 2
+  size: 50, 41
+  orig: 50, 41
+  offset: 0, 0
+  index: -1
+攻击/14
+  rotate: true
+  xy: 456, 124
+  size: 52, 39
+  orig: 52, 39
+  offset: 0, 0
+  index: -1
+攻击/17
+  rotate: false
+  xy: 499, 20
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+攻击/18
+  rotate: false
+  xy: 2, 463
+  size: 120, 55
+  orig: 122, 57
+  offset: 1, 1
+  index: -1
+攻击/19
+  rotate: false
+  xy: 124, 464
+  size: 102, 54
+  orig: 104, 56
+  offset: 1, 1
+  index: -1
+攻击/2
+  rotate: true
+  xy: 395, 388
+  size: 68, 72
+  orig: 68, 72
+  offset: 0, 0
+  index: -1
+攻击/20
+  rotate: true
+  xy: 2, 33
+  size: 98, 57
+  orig: 100, 59
+  offset: 1, 1
+  index: -1
+攻击/21
+  rotate: false
+  xy: 324, 463
+  size: 91, 55
+  orig: 93, 57
+  offset: 1, 1
+  index: -1
+攻击/3
+  rotate: false
+  xy: 372, 314
+  size: 69, 72
+  orig: 69, 72
+  offset: 0, 0
+  index: -1
+攻击/4
+  rotate: false
+  xy: 232, 306
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+攻击/5
+  rotate: true
+  xy: 233, 230
+  size: 74, 69
+  orig: 74, 69
+  offset: 0, 0
+  index: -1
+攻击/6
+  rotate: false
+  xy: 158, 137
+  size: 76, 76
+  orig: 76, 76
+  offset: 0, 0
+  index: -1
+攻击/7
+  rotate: false
+  xy: 417, 458
+  size: 87, 60
+  orig: 87, 60
+  offset: 0, 0
+  index: -1
+攻击/8
+  rotate: false
+  xy: 2, 298
+  size: 80, 83
+  orig: 80, 83
+  offset: 0, 0
+  index: -1
+攻击/9
+  rotate: false
+  xy: 2, 215
+  size: 81, 81
+  orig: 81, 81
+  offset: 0, 0
+  index: -1
+空中近战/1
+  rotate: true
+  xy: 340, 76
+  size: 72, 59
+  orig: 74, 61
+  offset: 1, 1
+  index: -1
+空中近战/2
+  rotate: false
+  xy: 240, 53
+  size: 51, 85
+  orig: 53, 87
+  offset: 1, 1
+  index: -1
+空中近战/3
+  rotate: false
+  xy: 278, 380
+  size: 43, 83
+  orig: 45, 85
+  offset: 1, 1
+  index: -1
+空中近战/4
+  rotate: false
+  xy: 228, 465
+  size: 94, 53
+  orig: 96, 55
+  offset: 1, 1
+  index: -1
+空中近战/5
+  rotate: true
+  xy: 339, 150
+  size: 78, 58
+  orig: 80, 60
+  offset: 1, 1
+  index: -1
+空中近战/6
+  rotate: true
+  xy: 359, 2
+  size: 72, 57
+  orig: 74, 59
+  offset: 1, 1
+  index: -1
+空中近战/7
+  rotate: false
+  xy: 293, 2
+  size: 64, 61
+  orig: 66, 63
+  offset: 1, 1
+  index: -1
+跳跃1/1
+  rotate: true
+  xy: 61, 37
+  size: 94, 37
+  orig: 98, 74
+  offset: 0, 18
+  index: -1
+跳跃1/2
+  rotate: false
+  xy: 399, 156
+  size: 34, 72
+  orig: 98, 74
+  offset: 49, 1
+  index: -1
+跳跃1/3
+  rotate: false
+  xy: 435, 178
+  size: 61, 64
+  orig: 98, 74
+  offset: 35, 8
+  index: -1
+跳跃2/1
+  rotate: true
+  xy: 401, 90
+  size: 64, 53
+  orig: 64, 53
+  offset: 0, 0
+  index: -1
+跳跃2/2
+  rotate: false
+  xy: 2, 133
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+跳跃2/3
+  rotate: true
+  xy: 85, 215
+  size: 81, 72
+  orig: 81, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/15
+  rotate: true
+  xy: 85, 215
+  size: 81, 72
+  orig: 81, 72
+  offset: 0, 0
+  index: -1
+跳跃2/4
+  rotate: true
+  xy: 100, 45
+  size: 86, 64
+  orig: 86, 64
+  offset: 0, 0
+  index: -1
+跳跃攻击/1
+  rotate: true
+  xy: 151, 380
+  size: 82, 72
+  orig: 82, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/10
+  rotate: true
+  xy: 293, 65
+  size: 80, 45
+  orig: 80, 45
+  offset: 0, 0
+  index: -1
+跳跃攻击/11
+  rotate: true
+  xy: 84, 133
+  size: 80, 72
+  orig: 80, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/12
+  rotate: true
+  xy: 159, 215
+  size: 81, 72
+  orig: 81, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/13
+  rotate: true
+  xy: 236, 140
+  size: 88, 52
+  orig: 88, 52
+  offset: 0, 0
+  index: -1
+跳跃攻击/14
+  rotate: true
+  xy: 158, 298
+  size: 80, 72
+  orig: 80, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/16
+  rotate: true
+  xy: 166, 53
+  size: 82, 72
+  orig: 82, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/17
+  rotate: true
+  xy: 84, 298
+  size: 75, 72
+  orig: 75, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/2
+  rotate: false
+  xy: 469, 384
+  size: 47, 72
+  orig: 47, 72
+  offset: 0, 0
+  index: -1
+跳跃攻击/3
+  rotate: true
+  xy: 225, 380
+  size: 82, 51
+  orig: 82, 51
+  offset: 0, 0
+  index: -1
+跳跃攻击/4
+  rotate: true
+  xy: 359, 230
+  size: 74, 53
+  orig: 74, 53
+  offset: 0, 0
+  index: -1
+跳跃攻击/5
+  rotate: false
+  xy: 418, 24
+  size: 61, 64
+  orig: 61, 64
+  offset: 0, 0
+  index: -1
+跳跃攻击/6
+  rotate: true
+  xy: 443, 314
+  size: 68, 70
+  orig: 68, 70
+  offset: 0, 0
+  index: -1
+跳跃攻击/7
+  rotate: true
+  xy: 290, 147
+  size: 81, 47
+  orig: 81, 47
+  offset: 0, 0
+  index: -1
+跳跃攻击/8
+  rotate: true
+  xy: 485, 248
+  size: 64, 23
+  orig: 64, 23
+  offset: 0, 0
+  index: -1
+跳跃攻击/9
+  rotate: true
+  xy: 456, 90
+  size: 32, 56
+  orig: 32, 56
+  offset: 0, 0
+  index: -1
