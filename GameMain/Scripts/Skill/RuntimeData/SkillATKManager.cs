@@ -9,30 +9,23 @@ namespace AltarOfSword
         {
             SkillCollectionMap = new Dictionary<int, SkillCollection>();
 
-            SkillCollectionMap.Add(SkillDefined.ST_Land,new SkillCollection());
-            SkillCollectionMap.Add(SkillDefined.ST_LandTemp, new SkillCollection());
-            SkillCollectionMap.Add(SkillDefined.ST_Sky, new SkillCollection());
-            SkillCollectionMap.Add(SkillDefined.ST_SkyTemp, new SkillCollection());
+            SkillCollectionMap.Add(SkillDefined.ST_Grounded, new SkillCollection());
+            SkillCollectionMap.Add(SkillDefined.ST_GroundedTemp, new SkillCollection());
+            SkillCollectionMap.Add(SkillDefined.ST_Airborne, new SkillCollection());
+            SkillCollectionMap.Add(SkillDefined.ST_AirborneTemp, new SkillCollection());
 
-            SkillCollection landCollection = SkillCollectionMap[SkillDefined.ST_Sky];
-            Init(landCollection.SkillInstances);
+            //SkillCollection landCollection = SkillCollectionMap[SkillDefined.ST_Sky];
+            //Init(landCollection.SkillDatas);
 
-            landCollection = SkillCollectionMap[SkillDefined.ST_Land];
-            Init(landCollection.SkillInstances);
+            SkillCollection landCollection = SkillCollectionMap[SkillDefined.ST_Grounded];
+            //Init(landCollection.SkillDatas);
 
-            landCollection[SkillDefined.ECMD_Nothing].SetSkillData(1000);
-            landCollection[SkillDefined.ECMD_MouseLD].SetSkillData(1001);
-            landCollection[SkillDefined.ECMD_Hrzt].SetSkillData(1002);
+            landCollection[SkillDefined.ECMD_Nothing] = GameEntry.Skill.GetSkillData(1000);
+            landCollection[SkillDefined.ECMD_MouseLD] = GameEntry.Skill.GetSkillData(1001);
+            landCollection[SkillDefined.ECMD_Hrzt] = GameEntry.Skill.GetSkillData(1002);
         }
-
-        private void Init(Dictionary<int, SkillInstance> instanceDic)
-        {
-            for (var i = SkillDefined.ECMD_Nothing; i < SkillDefined.ECMD_Max; i++)
-            {
-                 instanceDic.Add(i, new SkillInstance(i));
-            }
-        }
-        public SkillInstance this[int key, int cmd]
+       
+        public SkillData this[int key, int cmd]
         {
             get
             {
@@ -45,10 +38,11 @@ namespace AltarOfSword
 
         protected override bool STAssert(int skillType)
         {
-            return  skillType == SkillDefined.ST_Land || 
-                    skillType == SkillDefined.ST_Sky || 
-                    skillType == SkillDefined.ST_LandTemp || 
-                    skillType == SkillDefined.ST_SkyTemp;
+            return skillType == SkillDefined.ST_Grounded ||
+                    skillType == SkillDefined.ST_Airborne ||
+                    skillType == SkillDefined.ST_GroundedTemp ||
+                    skillType == SkillDefined.ST_AirborneTemp;
         }
+      
     }
 }

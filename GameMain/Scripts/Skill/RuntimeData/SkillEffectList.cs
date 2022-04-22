@@ -27,7 +27,7 @@ namespace AltarOfSword
 
         public void DelEffect(int entityID)
         {
-            Entity entity = entities.FirstOrDefault(x=>x.Id== entityID);
+            Entity entity = entities.FirstOrDefault(x=>x.ID== entityID);
             if (entity == null) return;
             entities.Remove(entity);
         }
@@ -36,6 +36,12 @@ namespace AltarOfSword
         {
             if (logic == null) return;
             entities.Remove(logic.Entity);
+        }
+
+        public override void Dispose()
+        {
+            Release();
+            entities = null;
         }
 
         public void Release()

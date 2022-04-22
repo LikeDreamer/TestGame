@@ -4,19 +4,37 @@ namespace AltarOfSword
 {
     public class SkillCollection
     {
-        public Dictionary<int, SkillInstance> SkillInstances { get; private set; }
+        public Dictionary<int, SkillData> SkillDatas { get; private set; }
         public SkillCollection()
         {
-            SkillInstances = new Dictionary<int, SkillInstance>();
+            SkillDatas = new Dictionary<int, SkillData>();
         }
 
-        public SkillInstance this[int key]
+        public SkillData this[int key]
         {
             get
             {
-                SkillInstances.TryGetValue(key, out SkillInstance instance);
+                SkillDatas.TryGetValue(key, out SkillData instance);
                 return instance;
             }
+            set
+            {
+                if(!SkillDatas.ContainsKey(key))
+                {
+                    SkillDatas.Add(key,value);
+                }
+                else
+                {
+                    SkillDatas[key] = value;
+                }
+                value.Init(key);
+            }
+        }
+
+        public void Destroy()
+        {
+            SkillDatas.Clear();
+            SkillDatas = null;
         }
     }
     public class SkillManager : SkillRuntimeDataPart
@@ -25,7 +43,6 @@ namespace AltarOfSword
         public SkillManager(SkillRuntimeData runtimeData) : base(runtimeData)
         {
         }
-    
         public SkillCollection this[int key]
         {
             get
@@ -36,11 +53,21 @@ namespace AltarOfSword
         }
         protected virtual bool STAssert(int skillType)
         {
-            return skillType == SkillDefined.ST_Land ||
-                    skillType == SkillDefined.ST_Sky ||
-                    skillType == SkillDefined.ST_LandTemp ||
-                    skillType == SkillDefined.ST_SkyTemp||
+            return skillType == SkillDefined.ST_Grounded ||
+                    skillType == SkillDefined.ST_Airborne ||
+                    skillType == SkillDefined.ST_GroundedTemp ||
+                    skillType == SkillDefined.ST_AirborneTemp||
                     skillType == SkillDefined.ST_NullCMD;
+        }
+
+        public override void Dispose()
+        {
+            foreach (var item in SkillCollectionMap)
+            {
+                item.Value.Destroy();
+            }
+            SkillCollectionMap.Clear();
+            SkillCollectionMap = null;
         }
     }
 }

@@ -14,11 +14,20 @@ namespace AltarOfSword
         public float SiteY { get => Collider.Get(1); set => Collider.Set(1, value); }
         public float SizeX { get => Collider.Get(2); set => Collider.Set(2, value); }
         public float SizeY { get => Collider.Get(3); set => Collider.Set(3, value); }
+
+        private Vector2 initialSize;
+        private Vector2 initialSite;
+        private Vector2 initialVelocity;
+        private float initialGravityScale;
         public SkillRigidbody(SkillRuntimeData runtimeData) : base(runtimeData)
         {
             Rigidbody = runtimeData.SkillLogic.Entity.GetComponent<Rigidbody2D>();
             Collider = Rigidbody.GetComponent<CapsuleCollider2D>();
-            IsSlowFrame=false;
+            IsSlowFrame = false;
+            initialSize = Collider.size;
+            initialSite = Collider.offset;
+            initialVelocity = Vector2.zero;
+            initialGravityScale = Rigidbody.gravityScale;
         }
 
         private void SetVelocity(float xV, float yV)
@@ -59,6 +68,25 @@ namespace AltarOfSword
             SkillDefined.SVMK_CBoxSizeY => SizeY = value,
             _ => 0
         };
+
+        public float ResetValue(int type) => type switch
+        {
+            SkillDefined.SVMK_GravityRate => GravityScale = initialGravityScale,
+            SkillDefined.SVMK_VelocityY => VelocityY = initialVelocity.y,
+            SkillDefined.SVMK_VelocityX => VelocityX = initialVelocity.x,
+            SkillDefined.SVMK_CBoxSiteX => SiteX = initialSite.x,
+            SkillDefined.SVMK_CBoxSiteY => SiteY = initialSite.y,
+            SkillDefined.SVMK_CBoxSizeX => SizeX = initialSize.x,
+            SkillDefined.SVMK_CBoxSizeY => SizeY = initialSize.y,
+            _ => 0
+        };
+
+
+        public override void Dispose()
+        {
+            Rigidbody = null;
+            Collider = null;
+        }
 
         public void OnUpdate(float slowTime, float deltaTime)
         {

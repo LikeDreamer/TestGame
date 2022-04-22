@@ -23,6 +23,7 @@ namespace AltarOfSword
             aTime = (float)args[2];
             dTime = (float)args[3];
             currentValue = 0.0f;
+            IsActive = true;
         }
         public override void OnUpdate(float deltaTime)
         {
@@ -31,6 +32,7 @@ namespace AltarOfSword
             float velocity = maxSpeed * dir;
             float time = cmdItem.IsTrigger ? aTime : dTime;
             Value = Mathf.SmoothDamp(inputValue, velocity, ref currentValue, time, Mathf.Infinity, deltaTime);
+            Value = Value * SlowRate;
         }
 
         public override void Clear()

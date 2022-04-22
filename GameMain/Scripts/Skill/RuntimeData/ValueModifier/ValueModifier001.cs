@@ -9,10 +9,11 @@
         {
             if (args.Length < 1) return;
             value = (float)args[0];
+            IsActive = true;
         }
         public override void OnUpdate(float deltaTime)
         {
-            Value = value;
+            Value = value*SlowRate;
         }
 
         public override void Clear()

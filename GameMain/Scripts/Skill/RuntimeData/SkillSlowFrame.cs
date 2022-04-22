@@ -62,7 +62,7 @@ namespace AltarOfSword
         {
             slowFrameInfos = new LinkedList<SlowFrameInfo>();
             Default = ReferencePool.Acquire<SlowFrameInfo>();
-            Default.SetData(0.0f, 1.0f, 1, true, true, true);
+            Default.SetData(0.0f, 1.0f, 1, false, false, false);
             Current = Default;
         }
         private float deltaTime = 0.0f;
@@ -76,9 +76,9 @@ namespace AltarOfSword
         public SlowFrameInfo AddSlowFrame(float timer, float rate, int priority, bool isAnimation = true, bool isEffect = true, bool isPhysics = true)
         {
             SlowFrameInfo slowFrameInfo = ReferencePool.Acquire<SlowFrameInfo>();
-            UnityGameFramework.Runtime.Log.Info($"缓帧时长 {timer}");
             slowFrameInfo.SetData(timer, rate, priority, isAnimation, isEffect, isPhysics);
             SlowFrameInfoSort(slowFrameInfo);
+            UnityGameFramework.Runtime.Log.Info($"缓帧时长 {timer}  {slowFrameInfos.Count}");
             return slowFrameInfo;
         }
 
@@ -180,21 +180,29 @@ namespace AltarOfSword
 
         private void SetSlowFrameAnimation(SlowFrameInfo info)
         {
-            if (!info.IsAnimation) return;
-            Root.Animation.TimeScale = info.Rate;
+            Root.Animation.TimeScale = info.IsAnimation ? info.Rate : Default.Rate;
         }
 
         private void SetSlowFrameEffect(SlowFrameInfo info)
         {
-            if (!info.IsEffect) return;
-            Root.Effect.SetSlowRate(info.Rate);
+            Root.Effect.SetSlowRate(info.IsEffect ? info.Rate : Default.Rate);
         }
 
         private void SetSlowFramePhysics(SlowFrameInfo info)
         {
-
+            Root.ValueModifier.SetSlowRate(info.IsPhysics, info.IsPhysics ? info.Rate : Default.Rate);
         }
 
-       
+        public override void Dispose()
+        {
+            foreach (SlowFrameInfo item in slowFrameInfos)
+            {
+                item.Release();
+            }
+            slowFrameInfos.Clear();
+            slowFrameInfos = null;
+            Default = null;
+            Current = null;
+        }
     }
 }

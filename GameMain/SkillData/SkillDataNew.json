@@ -120,106 +120,139 @@
         {
             "SkillID": 1001,
             "SkillConfigs": {},
-            "SkillFrames": 
-            [
+          "SkillFrames": [
+            {
+              "StartNum": 0,
+              "SkillFrameItems": [
                 {
-                    "StartNum": 0,
-                    "SkillFrameItems": 
-                    [
-                        {
-                            "Duration": 1,
-                            "Number": 1,
-                            "IsReverse": false,
-                            "TrueBehaviours":
-                             [
-                                {
-                                    "Type": 1,
-                                    "IsReverse": false,
-                                    "Message": 
-                                    {
-                                        "Data0": false,
-                                        "Data1": false,
-                                        "Data2": "J_Attack_001"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "StartNum": 6,
-                    "SkillFrameItems": 
-                    [
-                        {
-                            "Duration": 1,
-                            "Number": 1,
-                            "IsReverse": false,
-                            "TrueBehaviours": 
-                            [
-                                {
-                                    "Type": 14,
-                                    "IsReverse": false,
-                                    "Message": 
-                                    {
-                                        "Data0": 1004,
-                                        "Data1": 2,
-                                        "Data2": 0.5,
-                                        "Data3": 1.0
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "StartNum": 10,
-                    "SkillFrameItems": 
-                    [
-                        {
-                            "Duration": 1,
-                            "Number": 1,
-                            "IsReverse": false,
-                            "TrueBehaviours": 
-                            [
-                                {
-                                    "Type": 21,
-                                    "IsReverse": false,
-                                    "Message": 
-                                    {
-                                        "Data0": 7,
-                                        "Data1": 50,
-                                        "Data2": 1,
-                                        "Data3": 0.1
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "StartNum": 30,
-                    "SkillFrameItems": [
-                        {
-                            "Duration": 1,
-                            "Number": 1,
-                            "IsReverse": false,
-                            "TrueBehaviours": [
-                                {
-                                    "Type": 3,
-                                    "IsReverse": false,
-                                    "Message":
-                                    {
-                                       "data": 
-                                       [
-                                          4
-                                       ]
-                                    }
-                                }
-                            ]
-                        }
-                    ]
+                  "Duration": 1,
+                  "Number": 1,
+                  "IsReverse": false,
+                  "TrueBehaviours": [
+                    {
+                      "Type": 1,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": false,
+                        "Data1": false,
+                        "Data2": "J_Attack_001"
+                      }
+                    }
+                  ]
                 }
-            ]
+              ]
+            },
+            {
+              "StartNum": 6,
+              "SkillFrameItems": [
+                {
+                  "Duration": 1,
+                  "Number": 1,
+                  "IsReverse": false,
+                  "TrueBehaviours": [
+                    {
+                      "Type": 14,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": 1004,
+                        "Data1": 2,
+                        "Data2": 0.5,
+                        "Data3": 1.0
+                      }
+                    },
+                    {
+                      "Type": 8,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": 10001
+                      }
+                    },
+                    {
+                      "Type": 6,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": 1,
+                        "Data1": 1.0
+                      }
+                    },
+                    {
+                      "Type": 6,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": 2,
+                        "Data1": 6.0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "StartNum": 8,
+              "SkillFrameItems": [
+                {
+                  "Duration": 1,
+                  "Number": 1,
+                  "IsReverse": false,
+                  "TrueBehaviours": [
+                    {
+                      "Type": 21,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": 7,
+                        "Data1": 50,
+                        "Data2": 1,
+                        "Data3": 0.0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "StartNum": 10,
+              "SkillFrameItems": [
+                {
+                  "Duration": 1,
+                  "Number": 1,
+                  "IsReverse": false,
+                  "TrueBehaviours": [
+                    {
+                      "Type": 21,
+                      "IsReverse": false,
+                      "Message": {
+                        "Data0": 3,
+                        "Data1": 50,
+                        "Data2": 1,
+                        "Data3": 0.1
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "StartNum": 30,
+              "SkillFrameItems": [
+                {
+                  "Duration": 1,
+                  "Number": 1,
+                  "IsReverse": false,
+                  "TrueBehaviours": [
+                    {
+                      "Type": 3,
+                      "IsReverse": false,
+                      "Message": {
+                        "data": [
+                          4
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
             "SkillID": 1002,

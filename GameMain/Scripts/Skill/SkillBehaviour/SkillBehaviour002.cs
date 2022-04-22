@@ -22,9 +22,9 @@ namespace AltarOfSword
             {
                 SkillStateInfo stateInfo = logic.StateInfo;
                 int skillID = 0;
-                if (stateInfo.IsSky)
+                if (stateInfo.IsAirborne)
                 {
-                    dataInfo.NextInstance = logic.RuntimeData.TRGManager.GetSkillInstance(dataset.Data3); //设置下个技能为下落
+                    dataInfo.NextSkillData = logic.RuntimeData.TRGManager.GetSkillData(dataset.Data3); //设置下个技能为下落
                 }
                 else
                 {

@@ -23,7 +23,7 @@ namespace AltarOfSword
             SkillEffectData data = SkillEffectData.Create(entityID, dataset.Data0);
             data.Dataset = dataset;
             data.Direction= logic.StateInfo.Direction;
-            data.ParentID = logic.Entity.Id;
+            data.ParentID = logic.Entity.ID;
             data.OnShow = p =>
             {
                 logic.RuntimeData.Effect.AddEffect(p);

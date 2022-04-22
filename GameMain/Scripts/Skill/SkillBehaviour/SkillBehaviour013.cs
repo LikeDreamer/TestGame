@@ -31,7 +31,7 @@ namespace AltarOfSword
             if (dataset.Data4 <= 0)
             {
                 SkillExecutor.Execute(logic, frameCounter);
-                if (frameCounter.IsFinish) frameCounter.Recycle();
+                if (frameCounter.IsFinish) frameCounter.Release();
             }
             else
             {
@@ -39,10 +39,10 @@ namespace AltarOfSword
 
                 void ExitAction(SkillEvent skillEvent)
                 {
-                    if (logic.DataInfo.Instance.State!=SkillDefined.SS_Over)
+                    if (logic.DataInfo.SkillData.State!=SkillDefined.SS_Over)
                     {
                         SkillExecutor.Execute(logic, frameCounter);
-                        frameCounter.Recycle();
+                        frameCounter.Release();
                     }
                     else
                     {

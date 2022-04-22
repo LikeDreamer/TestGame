@@ -9,6 +9,8 @@ namespace AltarOfSword
         public Dictionary<int, ValueModifier> ModifierMap { get; private set; }
         private List<ValueModifier> TempModifiers { get; set; }
         private List<Type> VMModes { get; }
+        public float SlowRate { get; set;}
+        public bool IsSlowFrame { get; set; }
 
         public SkillValueModifier(SkillRuntimeData runtimeData) : base(runtimeData)
         {
@@ -23,8 +25,16 @@ namespace AltarOfSword
             {
                 typeof(ValueModifier001),
                 typeof(ValueModifier002),
-                typeof(ValueModifier003)
+                typeof(ValueModifier003),
+                typeof(ValueModifier004),
+                typeof(ValueModifier005)
             };
+        }
+
+        public void SetSlowRate(bool isSlowFrame,float slowRate)
+        {
+            SlowRate = slowRate;
+            IsSlowFrame = isSlowFrame;
         }
 
         public void OnUpdate(float deltaTime)
@@ -56,7 +66,7 @@ namespace AltarOfSword
 
         public ValueModifier Activate(int type, int mode, params object[] args)
         {
-            if (mode < 0 || mode > VMModes.Count - 1) return null;
+            if (mode < 0 || mode > VMModes.Count) return null;
             Type vmMode = VMModes[mode - 1];
             ValueModifier valueModifier = ModifierMap[type];
             if (valueModifier != null)
@@ -87,23 +97,6 @@ namespace AltarOfSword
             ModifierMap[valueModifier.ModifierType] = null;
             ReferencePool.Release(valueModifier);
         }
-
-        //public float GetValue(int type) => type switch
-        //{
-        //    SkillDefined.SVMK_SlowFrameRate => Root.SlowFrame.Rate,
-        //    SkillDefined.SVMK_GravityRate => Root.Rigidbody.GravityScale,
-        //    SkillDefined.SVMK_YVelocity => 0,
-        //    SkillDefined.SVMK_XVelocity => 0,
-        //    SkillDefined.SVMK_XCBoxSite => 0,
-        //    SkillDefined.SVMK_YCBoxSite => 0,
-        //    SkillDefined.SVMK_XCBoxSize => 0,
-        //    SkillDefined.SVMK_YCBoxSize => 0,
-        //    SkillDefined.SVMK_XBBoxSite => 0,
-        //    SkillDefined.SVMK_YBBoxSite => 0,
-        //    SkillDefined.SVMK_XBBoxSize => 0,
-        //    SkillDefined.SVMK_YBBoxSize => 0,
-        //    _ => 0
-        //};
 
         public float GetValue(int type)
         {
@@ -151,6 +144,23 @@ namespace AltarOfSword
                 default: return false;
             };
             return true;
+        }
+
+        public override void Dispose()
+        {
+            foreach (var item in ModifierMap)
+            {
+                item.Value.Release();
+            }
+            ModifierMap.Clear();
+            ModifierMap = null;
+            foreach (ValueModifier item in TempModifiers)
+            {
+                item.Release();
+            }
+            TempModifiers.Clear();
+            TempModifiers = null;
+            VMModes.Clear();
         }
     }
 }

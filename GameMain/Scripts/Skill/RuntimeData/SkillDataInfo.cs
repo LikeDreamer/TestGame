@@ -7,35 +7,41 @@ namespace AltarOfSword
     {
         public int State { get; set; }
         public int Key { get; private set; } //攻击时为命令，受击时为组
-        public SkillData(int key)
+        public float CoolingTime { get; private set;}
+        public void Init(int key)
         {
             State = SkillDefined.SS_Idle;
             Key = key;
         }
-       
         public SkillFrame GetSkillFrame(int frameIndex)
         {
             if (!SkillFrames.TryGetValue(out SkillFrame skillFrame, p => p.StartNum == frameIndex)) return null;
             return skillFrame;
         }
+
+        public void EnterCooling()
+        {
+            return;
+            int coolingTime=SkillConfigs[1];
+            CoolingTime = UnityEngine.Time.time + coolingTime / 10000.0f;
+        }
     }
     public class SkillDataInfo : SkillRuntimeDataPart
     {
-        public SkillInstance Instance { get; private set; }
-        public SkillData SkillData => Instance.SkillData;
+        public SkillData SkillData { get; set; }
         public int NextCMD { get; set; }
-        public int SkillState { get=> Instance.State; set=> Instance.State=value; }
+        public int SkillState { get=> SkillData.State; set=> SkillData.State=value; }
         public bool IsSkillOver => SkillState == SkillDefined.SS_Over;
-        public SkillInstance NextInstance { get; set; }
+        public SkillData NextSkillData { get; set; }
         public SkillDataInfo(SkillRuntimeData runtimeData) : base(runtimeData)
         {
-            Instance = Root.ATKManager[SkillDefined.AS_Land,SkillDefined.ECMD_Nothing];
-            NextCMD = Instance.Key;
+            SkillData = Root.ATKManager[SkillDefined.AS_Grounded,SkillDefined.ECMD_Nothing];
+            NextCMD = SkillData.Key;
         }
   
         public void OnFrameUpdate(int frameIndex,out SkillFrame skillFrame)
         {
-            skillFrame=Instance.GetSkillFrame(frameIndex);
+            skillFrame= SkillData.GetSkillFrame(frameIndex);
         }
 
         public void OnSkillOver()
@@ -48,7 +54,7 @@ namespace AltarOfSword
 
         private void SkillSwitchOver() //切换技能结束
         {
-            Instance.State = SkillDefined.SS_Update;
+            SkillData.State = SkillDefined.SS_Update;
             Root.FrameInfo.Reset();
             NextCMD = SkillDefined.ECMD_None;
         }
@@ -58,34 +64,34 @@ namespace AltarOfSword
             int skillType = Root.StateInfo.GetSkillType(false);
             int tempSkillType = Root.StateInfo.GetSkillType(true);
 
-            bool isFind = GetSkillInstance(tempSkillType, NextCMD, out SkillInstance skillInstance);
-            if (!isFind) isFind = GetSkillInstance(skillType, NextCMD, out skillInstance);
+            bool isFind = GetSkillData(tempSkillType, NextCMD, out SkillData skillData);;
+            if (!isFind) isFind = GetSkillData(skillType, NextCMD, out skillData);
             if (!isFind)
             {
                 NextCMD = SkillDefined.ECMD_None;
                 SkillNoneSwitch();
-                GetSkillInstance(skillType, NextCMD, out skillInstance);
+                GetSkillData(skillType, NextCMD, out skillData);
             }
-            Instance = skillInstance;
-            UnityGameFramework.Runtime.Log.Error($"{NextCMD}    {Instance.SkillData.SkillID}");
+            SkillData = skillData;
+            UnityGameFramework.Runtime.Log.Error($"{NextCMD}    {skillData.SkillID}");
         }
 
-        public bool GetSkillInstance(int skillType,int cmd,out SkillInstance skillInstance)
+        public bool GetSkillData(int skillType,int cmd,out SkillData skillData)
         {
-            skillInstance = null;
+            skillData = null;
             SkillCollection skillCollection = Root.ATKManager[skillType];
             if (skillCollection==null) return false;
-            skillInstance = skillCollection[cmd];
-            if (skillInstance == null || skillInstance.State != SkillDefined.SS_Idle)return false;
+            skillData = skillCollection[cmd];
+            if (skillData == null || skillData.State != SkillDefined.SS_Idle)return false;
             return true;
         }
 
         private bool SkillNextSwitch() //固定下一个技能切换
         {
-            if (NextInstance == null) return false;
-            if (NextInstance.State == SkillDefined.SS_Idle)
+            if (NextSkillData == null) return false;
+            if (NextSkillData.State == SkillDefined.SS_Idle)
             {
-                Instance = NextInstance;
+                SkillData = NextSkillData;
                 return true;
             }
             return false;
@@ -100,15 +106,21 @@ namespace AltarOfSword
 
         private void EnterCooling() //进入冷却或者进入空闲
         {
-            MapField<int, int> config = Instance.GetConfig();
+            MapField<int, int> config = SkillData.SkillConfigs;
             if(false)
             {
-                Instance.State = SkillDefined.SS_Cooling;
+                SkillData.State = SkillDefined.SS_Cooling;
             }
             else
             {
-                Instance.State = SkillDefined.SS_Idle;
+                SkillData.State = SkillDefined.SS_Idle;
             }
+        }
+
+        public override void Dispose()
+        {
+            SkillData = null;
+            NextCMD = 0;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AltarOfSword
             ValueModifier.OnUpdate(realElapseSeconds);
 
             //Counter.OnUpdate();
-            Rigidbody.OnUpdate(SlowFrame.DeltaTime,realElapseSeconds);
+            //Rigidbody.OnUpdate(SlowFrame.DeltaTime,realElapseSeconds);
 
             Input.OnUpdateOver(FrameInfo.IsChange);
 
@@ -60,6 +60,11 @@ namespace AltarOfSword
                     DataInfo.OnSkillOver();
                 }
             }
+        }
+        protected  override void OnRecycle()
+        {
+            base.OnRecycle();
+            RuntimeData.Dispose();
         }
     }
 }

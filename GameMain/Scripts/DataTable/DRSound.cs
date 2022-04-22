@@ -1,6 +1,6 @@
 ﻿//------------------------------------------------------------
 // 此文件由工具自动生成，请勿直接修改。
-// 生成时间：2022-04-14 19:14:24.554
+// 生成时间：2022-04-20 16:24:50.607
 //------------------------------------------------------------
 
 using GameFramework;
@@ -32,9 +32,9 @@ namespace AltarOfSword
         }
 
         /// <summary>
-        /// 获取资源名称。
+        /// 获取资源编号。
         /// </summary>
-        public string AssetName
+        public int AssetID
         {
             get;
             private set;
@@ -97,7 +97,7 @@ namespace AltarOfSword
             index++;
             m_Id = int.Parse(columnStrings[index++]);
             index++;
-            AssetName = columnStrings[index++];
+            AssetID = int.Parse(columnStrings[index++]);
             Priority = int.Parse(columnStrings[index++]);
             Loop = bool.Parse(columnStrings[index++]);
             Volume = float.Parse(columnStrings[index++]);
@@ -115,7 +115,7 @@ namespace AltarOfSword
                 using (BinaryReader binaryReader = new BinaryReader(memoryStream, Encoding.UTF8))
                 {
                     m_Id = binaryReader.Read7BitEncodedInt32();
-                    AssetName = binaryReader.ReadString();
+                    AssetID = binaryReader.Read7BitEncodedInt32();
                     Priority = binaryReader.Read7BitEncodedInt32();
                     Loop = binaryReader.ReadBoolean();
                     Volume = binaryReader.ReadSingle();

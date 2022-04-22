@@ -53,5 +53,10 @@
             Current = 0;
             Count = 0;
         }
+
+        public override void Dispose()
+        {
+            Reset();
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AltarOfSword
 {
-    public class SkillBehaviour004 : SkillBehaviour //播放动画
+    public class SkillBehaviour004 : SkillBehaviour //水平输入改变速度
     {
         public override void Execute(ActorSkillLogic logic, FrameCounter counter, DataUnit dataUnit)
         {
@@ -15,7 +15,6 @@ namespace AltarOfSword
             float data2 = dataset.Data2;
             ValueModifier valueModifier= logic.ValueModifier.Activate(SkillDefined.SVMK_VelocityX, 2, SkillDefined.ECMD_Hrzt, data0,data1,data2);
             logic.FrameEvent.AddListener(p=> valueModifier?.Release());
-           
         }
     }
 }

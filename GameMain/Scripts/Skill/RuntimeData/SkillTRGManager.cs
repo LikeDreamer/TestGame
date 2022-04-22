@@ -11,17 +11,16 @@ namespace AltarOfSword
             SkillCollectionMap.Add(SkillDefined.ST_NullCMD, new SkillCollection());
         }
         
-        public SkillInstance GetSkillInstance(int skillID)
+        public SkillData GetSkillData(int skillID)
         {
             SkillCollection skillCollection = SkillCollectionMap[SkillDefined.ST_NullCMD];
-            SkillInstance skillInstance=skillCollection[skillID];
-            if(skillInstance==null)
+            SkillData skillData =skillCollection[skillID];
+            if(skillData == null)
             {
-                skillInstance = new SkillInstance(skillID);
-                skillInstance.SetSkillData(skillID);
-                skillCollection.SkillInstances.Add(skillID, skillInstance);
+                skillData = GameEntry.Skill.GetSkillData(skillID);
+                skillCollection.SkillDatas.Add(skillID, skillData);
             }
-            return skillInstance;
+            return skillData;
         }
 
         protected override bool STAssert(int skillType)

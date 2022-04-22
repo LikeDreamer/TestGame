@@ -6,6 +6,7 @@ namespace AltarOfSword
     {
         protected SkillValueModifier manager;
         protected SkillRuntimeData RuntimeData => manager.Root;
+        protected float SlowRate => manager.SlowRate;
         public float Value { get; protected set; }
         public bool IsActive { get; set; }
         public int ModifierType { get; set; }

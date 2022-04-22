@@ -12,5 +12,9 @@ namespace AltarOfSword
         {
             SkeletonAnimation = runtimeData.SkillLogic.Entity.GetComponentInChildren<SkeletonAnimation>();
         }
+        public override void Dispose()
+        {
+            SkeletonAnimation = null;
+        }
     }
 }

@@ -1,43 +1,37 @@
 ﻿using UnityEngine;
-using System;
 
 namespace AltarOfSword
 {
     public class ValueModifier003 : ValueModifier
     {
-        private AnimationCurve curve;
-        private float totalTime;
-        private float timer;
+        private CMDItem cmdItem;
         public ValueModifier003() { }
         public ValueModifier003(SkillValueModifier valueModifier) : base(valueModifier) { }
+
+        private float dAccelerated; //长按加速度
+        private float uAccelerated; //不安加速度
+
         public override void Activate(params object[] args)
         {
-            if (args.Length < 1) return;
-            int index = (int)args[0];
-            curve = GameEntry.Skill.Curves[index];
-            if (curve == null || curve.keys == null || curve.keys.Length <= 0) return;
-            IsActive= true;
-            Array.ForEach(curve.keys, t=>totalTime=Mathf.Max(t.time,totalTime));
-            timer = 0.0f;
+            if (args.Length < 3) return;
+            int cmd= (int)args[0];
+            cmdItem = RuntimeData.Input.Input.GetCMDItem(cmd);
+            IsActive = cmdItem!=null;
+            dAccelerated = (float)args[1];
+            uAccelerated = (float)args[2];
         }
         public override void OnUpdate(float deltaTime)
         {
-            if(timer> totalTime)
-            {
-                IsActive = false;
-                return;
-            }
             base.OnUpdate(deltaTime);
-            timer += deltaTime;
-            Value=curve.Evaluate(totalTime);
+            Value = cmdItem.IsTrigger ? dAccelerated : uAccelerated;
+            Value = Value * SlowRate;
         }
 
         public override void Clear()
         {
             base.Clear();
-            curve = null;
-            totalTime = 0.0f;
-            timer = 0.0f;
+            dAccelerated = 0.0f;
+            uAccelerated = 0.0f;
         }
     }
 }

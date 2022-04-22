@@ -5,16 +5,19 @@ namespace AltarOfSword
     public class SkillShieldInfo : SkillRuntimeDataPart
     {
         public BoxCollider2D Collider { get; private set; }
-        public RaycastHit2D RaycastHit { get; private set; }
         public float SiteX { get => Collider.Get(0); set => Collider.Set(0, value); }
         public float SiteY { get => Collider.Get(1); set => Collider.Set(1, value); }
         public float SizeX { get => Collider.Get(2); set => Collider.Set(2, value); }
         public float SizeY { get => Collider.Get(3); set => Collider.Set(3, value); }
+        private Vector2 initialSize;
+        private Vector2 initialSite;
         public SkillShieldInfo(SkillRuntimeData runtimeData) : base(runtimeData)
         {
             Collider = Root.Rigidbody.Collider.GetComponent<BoxCollider2D>();
+            initialSize = Collider.size;
+            initialSite = Collider.offset;
         }
-
+        
         public void Activate(Vector3 position, Vector3 size)
         {
             if (size.x<0.1f||size.y<0.1f)
@@ -38,6 +41,7 @@ namespace AltarOfSword
             if (Collider != null) Collider.enabled = false;
         }
 
+     
         public float GetValue(int type) => type switch
         {
             SkillDefined.SVMK_SBoxSiteX => SiteX,
@@ -47,6 +51,17 @@ namespace AltarOfSword
             _ => 0
         };
 
+
+        public float ResetValue(int type) => type switch
+        {
+            SkillDefined.SVMK_SBoxSiteX => SiteX = initialSite.x,
+            SkillDefined.SVMK_SBoxSiteY => SiteY = initialSite.y,
+            SkillDefined.SVMK_SBoxSizeX => SizeX = initialSize.x,
+            SkillDefined.SVMK_SBoxSizeY => SizeY = initialSize.y,
+            _ => 0
+        };
+
+
         public float SetValue(int type,float value) => type switch
         {
             SkillDefined.SVMK_SBoxSiteX => SiteX=value,
@@ -55,5 +70,10 @@ namespace AltarOfSword
             SkillDefined.SVMK_SBoxSizeY => SizeY=value,
             _ => 0
         };
+
+        public override void Dispose()
+        {
+            Collider = null;
+        }
     }
 }

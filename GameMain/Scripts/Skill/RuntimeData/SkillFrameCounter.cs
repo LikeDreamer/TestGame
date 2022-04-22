@@ -42,7 +42,7 @@ namespace AltarOfSword
             this.duration = duration != 0?duration:this.FrameItem.Duration;
         }
 
-        public void Recycle()
+        public void Release()
         {
             ReferencePool.Release(this);
         }
@@ -91,7 +91,7 @@ namespace AltarOfSword
 
         public void Recycle(FrameCounter frameCounter)
         {
-            frameCounter.Recycle();
+            frameCounter.Release();
         }
 
         public void AddFrameCounter(FrameCounter frameCounter)
@@ -137,10 +137,33 @@ namespace AltarOfSword
             frameCounters.ForEach(p => { if (!p.IsContinue) tempFrameCounters.Add(p);});
             foreach (FrameCounter item in tempFrameCounters)
             {
-                item.Recycle();
+                item.Release();
                 frameCounters.Remove(item);
             }
             tempFrameCounters.Clear();
+        }
+
+        public override void Dispose()
+        {
+            if (frameCounters.Count > 0)
+            {
+                foreach (FrameCounter item in frameCounters)
+                {
+                    item.Release();
+                }
+                frameCounters.Clear();
+                frameCounters = null;
+            }
+
+            if (tempFrameCounters.Count > 0)
+            {
+                foreach (FrameCounter item in tempFrameCounters)
+                {
+                    item.Release();
+                }
+                tempFrameCounters.Clear();
+                tempFrameCounters = null;
+            }
         }
     }
 }

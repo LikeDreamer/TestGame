@@ -39,5 +39,10 @@ namespace AltarOfSword
             //如果一次Update中执行两次逻辑帧，对于长按的命令，reset会导致值重置，
             if (isReset) Input.Reset();
         }
+
+        public override void Dispose()
+        {
+            Input = null;
+        }
     }
 }

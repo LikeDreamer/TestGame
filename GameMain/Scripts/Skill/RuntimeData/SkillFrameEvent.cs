@@ -57,7 +57,7 @@ namespace AltarOfSword
             if (isClear) Clear();
         }
 
-        public void Recycle()
+        public void Release()
         {
             ReferencePool.Release(this);
         }
@@ -133,7 +133,7 @@ namespace AltarOfSword
             {
                 foreach (SkillEvent item in TempCollectionEvent)
                 {
-                    item.Recycle();
+                    item.Release();
                     collectionEvent.Remove(item);
                 }
                 TempCollectionEvent.Clear();
@@ -146,10 +146,32 @@ namespace AltarOfSword
             {
                 foreach (SkillEvent item in collectionEvent)
                 {
-                    item.Recycle();
+                    item.Release();
                 }
                 collectionEvent.Clear();
             }
+        }
+
+        public override void Dispose()
+        {
+            Dispose(InterruptEvent);
+            Dispose(ContinueEvent);
+            Dispose(SkillOverEvent);
+            Dispose(TempCollectionEvent);
+            InterruptEvent = null;
+            ContinueEvent = null;
+            SkillOverEvent = null;
+            TempCollectionEvent = null;
+        }
+
+        private void Dispose(List<SkillEvent> skillEvents)
+        {
+            foreach (SkillEvent item in skillEvents)
+            {
+                item.Release();
+            }
+            skillEvents.Clear();
+            skillEvents = null;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace AltarOfSword
         [SerializeField]
         private EntityData entityData = null;
 
-        public int ID => Entity.Id;
+        public int ID => Entity.ID;
 
         protected override void OnInit(object userData)
         {

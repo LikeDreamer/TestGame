@@ -9,16 +9,16 @@ namespace AltarOfSword
         public const int FPS = 60;//帧率
         public const float FrameRate = 1.0f/FPS;//帧率
         //SkillState
-        public const int SS_Null = 0;//空数据
-        public const int SS_Idle = SS_Null + 1;//空闲中
+        public const int SS_None = 0;//空数据
+        public const int SS_Idle = SS_None + 1;//空闲中
         public const int SS_Update = SS_Idle + 1;//释放中
         public const int SS_Over = SS_Update + 1;//当数据的Leave执行完成时候切换到结束状态
         public const int SS_Forbid = SS_Over + 1;//禁用状态
         public const int SS_Cooling = SS_Forbid + 1;//冷却中
 
         //ActorState
-        public const int AS_Land = 0;//在地面
-        public const int AS_Sky = 1;//在空中
+        public const int AS_Grounded = 0;//在地面
+        public const int AS_Airborne = 1;//在空中
         public const int AS_Other = 2;//其他状态
 
         //DirectionState
@@ -28,11 +28,11 @@ namespace AltarOfSword
         //空技能ID
         public const int NullSkillID = -1;//向左
 
-        //SkillType
-        public const int ST_Land = 0;//在地面
-        public const int ST_Sky = 1;//在空中
-        public const int ST_LandTemp = 2;//地面零时
-        public const int ST_SkyTemp = 3;//在空中零时
+        //SkillType   Grounded Airborne
+        public const int ST_Grounded = 0;//在地面
+        public const int ST_Airborne = 1;//在空中
+        public const int ST_GroundedTemp = 2;//地面零时
+        public const int ST_AirborneTemp = 3;//在空中零时
         public const int ST_NullCMD = 4;//非命令触发技能，如下落等等
 
         //SkillValueModifierKey
