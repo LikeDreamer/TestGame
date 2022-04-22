@@ -13,8 +13,8 @@ namespace AltarOfSword
 {
     public class ProcedureMenu : ProcedureBase
     {
-        private bool m_StartGame = false;
-       // private MenuForm m_MenuForm = null;
+        private bool startGame = false;
+        private UIStartForm startForm = null;
 
         public override bool UseNativeDialog
         {
@@ -26,7 +26,7 @@ namespace AltarOfSword
 
         public void StartGame()
         {
-            m_StartGame = true;
+            startGame = true;
         }
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
@@ -35,8 +35,8 @@ namespace AltarOfSword
 
             GameEntry.Event.Subscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
 
-            m_StartGame = false;
-            //GameEntry.UI.OpenUIForm(UIFormId.MenuForm, this);
+            startGame = false;
+            GameEntry.UI.OpenUIForm(EUIForm.UIStartForm,this);
         }
 
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
@@ -44,23 +44,21 @@ namespace AltarOfSword
             base.OnLeave(procedureOwner, isShutdown);
 
             GameEntry.Event.Unsubscribe(OpenUIFormSuccessEventArgs.EventId, OnOpenUIFormSuccess);
-
-            //if (m_MenuForm != null)
-            //{
-            //    m_MenuForm.Close(isShutdown);
-            //    m_MenuForm = null;
-            //}
+            if (startForm != null)
+            {
+                startForm.Close(true);
+                startForm = null;
+            }
         }
 
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
 
-            m_StartGame = true;
-            if (m_StartGame)
+            if (startGame)
             {
                 procedureOwner.SetData<VarInt32>(Constant.ProcedureData.NextSceneId, GameEntry.Config.GetInt("Scene.Main"));
-               // procedureOwner.SetData<VarByte>("GameMode", (byte)GameMode.Survival);
+                procedureOwner.SetData<VarByte>("GameMode", (byte)GameMode.Survival); //设置游戏模式
                 ChangeState<ProcedureChangeScene>(procedureOwner);
             }
         }
@@ -72,8 +70,7 @@ namespace AltarOfSword
             {
                 return;
             }
-
-            //m_MenuForm = (MenuForm)ne.UIForm.Logic;
+            startForm = (UIStartForm)ne.UIForm.Logic;
         }
     }
 }

@@ -63,7 +63,6 @@ namespace AltarOfSword
             modifier.SetValue();
         }
 
-
         public ValueModifier Activate(int type, int mode, params object[] args)
         {
             if (mode < 0 || mode > VMModes.Count) return null;
@@ -150,7 +149,7 @@ namespace AltarOfSword
         {
             foreach (var item in ModifierMap)
             {
-                item.Value.Release();
+                if(item.Value!=null) ReferencePool.Release(item.Value);
             }
             ModifierMap.Clear();
             ModifierMap = null;

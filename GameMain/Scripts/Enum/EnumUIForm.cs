@@ -15,5 +15,9 @@ namespace AltarOfSword
         /// 开始菜单
         /// </summary>
         UIStartForm = 1001,
+        /// <summary>
+        /// 游戏主菜单
+        /// </summary>
+        UIOverForm = 1002,
     }
 }

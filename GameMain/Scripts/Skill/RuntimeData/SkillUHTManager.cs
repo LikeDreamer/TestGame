@@ -41,8 +41,6 @@ namespace AltarOfSword
             BehitSkillMap.Add(st, new SkillBehitGroup(this.Root, st));
 
             DefaultSkillData = GameEntry.Skill.GetSkillData(1000);
-
-            GameEntry.Entity.DetachEntity
         }
 
 

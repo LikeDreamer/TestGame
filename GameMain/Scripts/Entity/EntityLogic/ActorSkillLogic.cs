@@ -15,6 +15,8 @@ namespace AltarOfSword
         public SkillRigidbody Rigidbody => RuntimeData.Rigidbody;
         public SkillValueModifier ValueModifier => RuntimeData.ValueModifier;
 
+        public bool IsActive { get; set; }
+
         protected override void OnInit(object userData)
         {
             base.OnInit(userData);
@@ -23,6 +25,7 @@ namespace AltarOfSword
 
         protected override void OnUpdate(float elapseSeconds, float realElapseSeconds)
         {
+            if (!IsActive) return;
             //Log.Info($"{elapseSeconds}  {realElapseSeconds}");
             Input.OnUpdate();
 
@@ -61,7 +64,19 @@ namespace AltarOfSword
                 }
             }
         }
-        protected  override void OnRecycle()
+        protected override void OnShow(object userData)
+        {
+            base.OnShow(userData);
+            IsActive = true;
+        }
+
+        protected override void OnHide(bool isShutdown, object userData)
+        {
+            base.OnHide(true, userData);
+            IsActive = false;
+        }
+
+        protected override void OnRecycle()
         {
             base.OnRecycle();
             RuntimeData.Dispose();

@@ -24,7 +24,7 @@ namespace AltarOfSword
             m_ElapseSeconds += elapseSeconds;
             if (m_ElapseSeconds >= 1f)
             {
-                //m_ElapseSeconds = 0f;
+                m_ElapseSeconds = 0f;
                 //IDataTable<DRAsteroid> dtAsteroid = GameEntry.DataTable.GetDataTable<DRAsteroid>();
                 //float randomPositionX = SceneBackground.EnemySpawnBoundary.bounds.min.x + SceneBackground.EnemySpawnBoundary.bounds.size.x * (float)Utility.Random.GetRandomDouble();
                 //float randomPositionZ = SceneBackground.EnemySpawnBoundary.bounds.min.z + SceneBackground.EnemySpawnBoundary.bounds.size.z * (float)Utility.Random.GetRandomDouble();

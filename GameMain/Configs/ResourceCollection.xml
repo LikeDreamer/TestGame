@@ -47,6 +47,7 @@
       <Asset Guid="a3df6df710075fa4f88c80d30f3bdc6b" ResourceName="SkillData" />
       <Asset Guid="a9e0be97f4b09d84581d27c49d5ff7a3" ResourceName="Tables" />
       <Asset Guid="e0792649e7774a24d8e7cceba0231c61" ResourceName="Tables" />
+      <Asset Guid="f8f6364705953184db0427cc0c8df6ef" ResourceName="UI" />
       <Asset Guid="fdb5edd099d06b045af609ba3172400a" ResourceName="Tables" />
     </Assets>
   </ResourceCollection>
